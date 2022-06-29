@@ -6,6 +6,10 @@ const resolvers = {
     movies: (parent, args, context) => {
       return movies;
     },
+    movie: (parent, args, context) => {
+      const index = movies.findIndex((movie) => movie.id === args.id);
+      return index !== -1 ? movies[index] : null;
+    },
   },
 };
 
